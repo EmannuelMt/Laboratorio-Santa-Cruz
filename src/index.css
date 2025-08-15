@@ -1,0 +1,251 @@
+:root {
+  --light-gray: #f5f5f5;
+  --medium-gray: #e0e0e0;
+  --dark-gray: #757575;
+  --light-blue: #4fc3f7;
+  --dark-blue: #1976d2;
+  --green: #4caf50;
+  --red: #f44336;
+  --white: #ffffff;
+  --black: #212121;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--light-gray);
+  color: var(--black);
+}
+
+/* Login Page */
+.login-container, .verification-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--light-gray);
+}
+
+.login-box, .verification-box {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-box h1, .verification-box h2 {
+  color: var(--dark-blue);
+  margin-bottom: 1.5rem;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--dark-gray);
+}
+
+input {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  border: 1px solid var(--medium-gray);
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--light-blue);
+}
+
+input[type="date"] {
+  padding: 11px 12px 11px 40px;
+}
+
+.login-button, .verify-button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--dark-blue);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover, .verify-button:hover {
+  background-color: #1565c0;
+}
+
+.error-message {
+  color: var(--red);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Result Page */
+.result-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.result-box {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.result-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--medium-gray);
+  padding-bottom: 1rem;
+}
+
+.result-header h2 {
+  color: var(--dark-blue);
+}
+
+.patient-info {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--medium-gray);
+}
+
+.exam-results {
+  margin-bottom: 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--medium-gray);
+}
+
+th {
+  background-color: var(--light-gray);
+  font-weight: 600;
+}
+
+.normal-result {
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.abnormal-result {
+  color: var(--red);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.exam-image {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.exam-image img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--medium-gray);
+  border-radius: 4px;
+}
+
+.exam-conclusion {
+  background-color: var(--light-gray);
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+}
+
+.result-footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+  border-top: 1px solid var(--medium-gray);
+  padding-top: 1rem;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.pdf-button, .logout-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pdf-button {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+.pdf-button:hover {
+  background-color: #1565c0;
+}
+
+.logout-button {
+  background-color: var(--medium-gray);
+  color: var(--black);
+}
+
+.logout-button:hover {
+  background-color: #bdbdbd;
+}
+
+@media (max-width: 768px) {
+  .result-container {
+    padding: 0.5rem;
+  }
+  
+  .result-box {
+    padding: 1rem;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  th, td {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+}
