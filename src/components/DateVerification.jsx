@@ -124,7 +124,7 @@ const DateVerification = () => {
                     />
                     <div className="input-border"></div>
                   </div>
-                  <div className="date-hint">Data esperada: 05/10/1998</div>
+                  
                 </motion.div>
 
                 <AnimatePresence>
