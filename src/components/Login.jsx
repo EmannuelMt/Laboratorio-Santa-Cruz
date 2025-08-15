@@ -14,12 +14,12 @@ const Login = () => {
   const [focusedField, setFocusedField] = useState(null);
   const navigate = useNavigate();
 
-  // Dados de usuário mockados
+  // Updated mock user data
   const users = [
-    { username: '1765072', password: ' AF9FD8', birthDate: '05-10-1998' },
+    { username: '1765072', password: 'AF9FD8', birthDate: '05-10-1998' },
   ];
 
-  // Efeito para limpar o estado ao desmontar
+  // Cleanup effect
   useEffect(() => {
     return () => {
       setIsLoading(false);
@@ -32,7 +32,7 @@ const Login = () => {
     setError('');
     setIsLoading(true);
 
-    // Simula uma requisição à API
+    // Simulate API request
     await new Promise(resolve => setTimeout(resolve, 1500));
     
     const user = users.find(u => u.username === username && u.password === password);
@@ -75,8 +75,8 @@ const Login = () => {
                   <FaCheck />
                 </div>
               </motion.div>
-              <h2>Autenticado com sucesso!</h2>
-              <p>Redirecionando para sua conta...</p>
+              <h2>Authentication Successful!</h2>
+              <p>Redirecting to your account...</p>
             </motion.div>
           ) : (
             <motion.div
@@ -97,8 +97,8 @@ const Login = () => {
                   <FiActivity className="lab-icon" />
                   <div className="logo-badge">SC</div>
                 </div>
-                <h1>Laboratório Santa Crux</h1>
-                <p>Sistema de Resultados Online</p>
+                <h1>Santa Crux Laboratory</h1>
+                <p>Online Results System</p>
               </motion.div>
 
               <form onSubmit={handleSubmit}>
@@ -111,7 +111,7 @@ const Login = () => {
                   <FiUser className="input-icon" />
                   <input
                     type="text"
-                    placeholder="Número de usuário"
+                    placeholder="User ID"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                     onFocus={() => setFocusedField('username')}
@@ -130,7 +130,7 @@ const Login = () => {
                   <FiLock className="input-icon" />
                   <input
                     type="password"
-                    placeholder="Senha de acesso"
+                    placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     onFocus={() => setFocusedField('password')}
@@ -169,7 +169,7 @@ const Login = () => {
                     <span className="loading-spinner"></span>
                   ) : (
                     <>
-                      <span>Acessar</span>
+                      <span>Login</span>
                       <FiArrowRight className="button-icon" />
                     </>
                   )}
@@ -182,7 +182,7 @@ const Login = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1 }}
               >
-                <p>Problemas com acesso? <a href="#">Contate o suporte</a></p>
+                <p>Problemas com acesso?<a href="#">Contate o suportet</a></p>
                 <div className="security-badge">
                   <div className="shield-icon">🛡️</div>
                   <span>Sistema seguro</span>
